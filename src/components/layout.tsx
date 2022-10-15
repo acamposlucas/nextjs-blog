@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { PaintBrush } from "phosphor-react";
 
 const name = "Lucas";
 export const siteTitle = "leifoleifo.dev";
@@ -12,7 +13,7 @@ interface ILayout {
 
 export default function Layout({ children, home }: ILayout) {
 	return (
-		<div className="w-11/12 max-w-7xl py-4 mx-auto mt-12 mb-24">
+		<div className="w-11/12 max-w-7xl py-4 mx-auto mt-12 mb-24 relative">
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<meta
@@ -28,6 +29,13 @@ export default function Layout({ children, home }: ILayout) {
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
+			<button type="button" className="absolute right-4 top-2">
+				<PaintBrush
+					size={32}
+					weight={"light"}
+					className="hover:text-red-500 hover:transition-colors"
+				/>
+			</button>
 			<header className="text-center">
 				{home ? (
 					<>
