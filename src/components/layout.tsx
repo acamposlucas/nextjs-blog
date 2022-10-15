@@ -1,6 +1,8 @@
+import { useTheme } from "next-themes";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { PaintBrush } from "phosphor-react";
 
 const name = "Lucas";
@@ -12,8 +14,23 @@ interface ILayout {
 }
 
 export default function Layout({ children, home }: ILayout) {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  const handleChosenTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
-    <div className="min-h-screen bg-purpleHeart text-timberwolf dark:bg-timberwolf dark:text-purpleHeart">
+    <div className="min-h-screen bg-purpleHeart text-timberwolf transition-colors duration-700 ease-in-out dark:bg-timberwolf dark:text-purpleHeart">
       <div className="relative mx-auto mb-24 w-11/12 max-w-7xl py-12">
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -30,7 +47,11 @@ export default function Layout({ children, home }: ILayout) {
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-        <button type="button" className="absolute right-4 top-12">
+        <button
+          type="button"
+          onClick={handleChosenTheme}
+          className="absolute right-4 top-12"
+        >
           <PaintBrush
             size={32}
             weight={"light"}
