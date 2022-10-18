@@ -8,7 +8,27 @@ interface IHeader {
   handleToggleTheme: () => void;
 }
 
+interface INavItem {
+  label: string;
+  page: string;
+}
+
 const name = "lucas";
+
+const navItems: INavItem[] = [
+  {
+    label: "Blog",
+    page: "/",
+  },
+  {
+    label: "Projects",
+    page: "/projects",
+  },
+  {
+    label: "About me",
+    page: "/about",
+  },
+];
 
 export const Header = ({ home, handleToggleTheme }: IHeader) => {
   const router = useRouter();
@@ -54,14 +74,10 @@ export const Header = ({ home, handleToggleTheme }: IHeader) => {
         <div className="flex gap-8">
           <nav>
             <ul className="flex gap-8">
-              {[
-                ["Blog", "/"],
-                ["Projects", "/projects"],
-                ["About me", "/about"],
-              ].map(([title, url]) => (
+              {navItems.map(({ label, page }) => (
                 <li>
-                  <Link href={url}>
-                    <a>{title}</a>
+                  <Link href={page}>
+                    <a>{label}</a>
                   </Link>
                 </li>
               ))}
