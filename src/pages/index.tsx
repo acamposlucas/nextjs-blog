@@ -25,11 +25,11 @@ export default function Home({ allPostsData }: IHome) {
       </section>
       <section>
         <h2 className="mb-4 font-bold text-2xl">Blog</h2>
-        <ul>
+        <ul className="flex flex-col gap-4">
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>
               <Link href={`/posts/${id}`}>
-                <a>{title}</a>
+                <a className="text-lg">{title}</a>
               </Link>
               <small className="block">
                 <Date dateString={date} />

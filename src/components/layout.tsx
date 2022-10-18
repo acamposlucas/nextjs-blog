@@ -25,12 +25,12 @@ export default function Layout({ children, home }: ILayout) {
     return null;
   }
 
-  const handleChosenTheme = () => {
+  const handleToggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
-    <div className="min-h-screen bg-purpleHeart text-timberwolf transition-colors duration-700 ease-in-out dark:bg-timberwolf dark:text-purpleHeart">
+    <div className="min-h-screen bg-zinc-200 text-stone-900 transition-colors duration-700 ease-in-out dark:bg-stone-900 dark:text-zinc-200">
       <div className="relative mx-auto mb-24 w-11/12 max-w-7xl py-12">
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -49,7 +49,7 @@ export default function Layout({ children, home }: ILayout) {
         </Head>
         <button
           type="button"
-          onClick={handleChosenTheme}
+          onClick={handleToggleTheme}
           className="absolute right-4 top-12"
         >
           <PaintBrush
