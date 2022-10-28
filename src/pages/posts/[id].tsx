@@ -13,6 +13,14 @@ interface IPost {
   };
 }
 
+{
+  /**
+   * TODO: Review @tailwindcss/typography plugin color scheme for light and dark mode
+   * - https://tailwindcss.com/docs/typography-plugin
+   * - https://tailwindcss.com/docs/typography-plugin#adding-custom-color-themes
+   */
+}
+
 export default function Post({ postData }: IPost) {
   return (
     <Layout>
@@ -22,7 +30,7 @@ export default function Post({ postData }: IPost) {
       <h1 className="font-bold text-2xl">{postData.title}</h1>
       <Date dateString={postData.date} />
       <article
-        className="prose"
+        className="prose text-white dark:text-midnightBlue"
         dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
       ></article>
     </Layout>

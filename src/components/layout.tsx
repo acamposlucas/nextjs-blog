@@ -30,7 +30,7 @@ export default function Layout({ children, home }: ILayout) {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-200 text-stone-900 transition-colors duration-700 ease-in-out dark:bg-stone-900 dark:text-zinc-200">
+    <div className="min-h-screen bg-midnightBlue text-white transition-colors duration-700 ease-in-out dark:bg-white dark:text-midnightBlue">
       <div className="relative mx-auto w-11/12 max-w-6xl py-12">
         <Head>
           <link rel="icon" href="/favicon.ico" />

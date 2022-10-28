@@ -75,7 +75,7 @@ export const Header = ({ home, handleToggleTheme }: IHeader) => {
           <nav>
             <ul className="flex gap-8">
               {navItems.map(({ label, page }) => (
-                <li>
+                <li key={label}>
                   <Link href={page}>
                     <a>{label}</a>
                   </Link>

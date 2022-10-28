@@ -44,21 +44,22 @@ export default function Home({ allPostsData }: IHome) {
           <h2 className="mb-4 font-bold text-2xl">Projects</h2>
           <div className="flex flex-wrap gap-4">
             <Link href="/">
-              <a className="flex max-w-md flex-col overflow-hidden rounded-md bg-white shadow-md hover:bg-zinc-300 hover:transition-colors">
+              <a className="relative flex max-w-md flex-col overflow-hidden rounded-md bg-white shadow-md">
                 <Image
+                  className="transition-transform duration-200 hover:scale-110"
                   src="/assets/spacetourism.jpg"
                   width={504}
                   height={282}
                 />
                 <div className="flex flex-col p-4">
-                  <h3 className="text-lg dark:text-stone-900">
+                  <h3 className="text-midnightBlue text-lg">
                     Spacial Tourism Website
                   </h3>
-                  <p className="text-xs dark:text-stone-900">
+                  <p className="text-midnightBlue text-xs">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Iure, tenetur.
                   </p>
-                  <ul className="flex gap-4 text-stone-900">
+                  <ul className="flex gap-4 text-midnightBlue">
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>Javascript</li>

@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         timberwolf: "#ecd6d2",
         purpleHeart: "#374ee2",
+        midnightBlue: "#152559",
       },
     },
   },
